@@ -12,3 +12,9 @@
 - Next:
   - build the first version of this hub
   - revisit `Sage and Speak`
+
+## June 6, 2026 Session 2
+
+- Start time: 5:28 PM EDT
+- Focus: `GitHub`, `project organization`, `Coding Learning Hub`
+- Goal: make the hub clearer, cleaner, and more portfolio-ready

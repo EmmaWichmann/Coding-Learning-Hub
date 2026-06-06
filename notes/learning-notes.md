@@ -8,6 +8,7 @@
 - `console.log()` is like leaving yourself a note in the browser's hidden developer notebook.
 - `margin` is space outside an element.
 - `padding` is space inside an element.
+- `ul` is a little like a `div` for lists: it groups list items together, but specifically for bullet-style list content.
 
 ## Goal for Later
 
