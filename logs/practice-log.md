@@ -62,3 +62,30 @@
 - Testing note: Python was used only to run a temporary local web server for browser testing. The Coding Hub itself still uses `HTML`, `CSS`, and `JavaScript`.
 - Learning plan: return to slow learning and add future features in tiny, explained steps.
 - Current task at 9:12 PM EDT: find and understand the `form.reset();` line in `script.js`.
+- Pause time: 9:50 PM EDT
+- Tracked duration: 44 minutes
+- Additional work completed independently with step-by-step guidance:
+  - found and explained `form.reset();`
+  - added `activeFilter`
+  - created the first All filter button
+  - separated saving categories from viewing filters
+  - connected `filterPicker` with `document.getElementById()`
+  - wrote the filter click listener by following the existing mood-listener pattern
+  - created `visibleEntries` with `entries.filter()`
+  - added a message for categories with no saved songs
+- Final AI-assisted wrap-up:
+  - combined saving and filtering into the left-side mood buttons
+  - removed the duplicate filter row above Saved Tracks
+  - added `All`, `Vacation`, and `Nostalgic`
+  - added visible labels for the saving mood and current library view
+  - cleaned formatting and tested saving, empty categories, and All
+  - added language groups and the requested new cards to Study Mode
+- Questions explored:
+  - what `let` means
+  - why HTML attributes need `=`
+  - what `class`, `data-mood`, `data-filter`, and `type="button"` do
+  - the difference between selecting a category for saving and filtering the library
+- Learning note: asked frequent questions and tried to understand and extend code patterns instead of relying on AI without explanation.
+- Session status: paused for a shower
+- Overall coding time today: 44 minutes
+- Overall coding time since practice logging began: 5 hours 45 minutes

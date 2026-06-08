@@ -3,6 +3,7 @@ const missedKey = "coding-hub-missed-concepts";
 const reviewIntervals = [1, 3, 7, 14, 30];
 
 const modeButtons = document.querySelectorAll("[data-mode]");
+const languageButtons = document.querySelectorAll("[data-language]");
 const topicLabel = document.getElementById("card-topic");
 const typeLabel = document.getElementById("card-type");
 const promptNode = document.getElementById("card-prompt");
@@ -24,6 +25,7 @@ const resetButton = document.getElementById("reset-progress");
 let progress = readStorage(progressKey, {});
 let missedConcepts = readStorage(missedKey, []);
 let currentMode = "due";
+let activeLanguage = "all";
 let currentCards = [];
 let currentIndex = 0;
 let reviewedThisSession = 0;
@@ -35,6 +37,15 @@ modeButtons.forEach((button) => {
     modeButtons.forEach((item) => item.classList.remove("active"));
     button.classList.add("active");
     startMode(button.dataset.mode);
+  });
+});
+
+languageButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    languageButtons.forEach((item) => item.classList.remove("active"));
+    button.classList.add("active");
+    activeLanguage = button.dataset.language;
+    startMode(currentMode);
   });
 });
 
@@ -82,19 +93,25 @@ function startMode(mode) {
 }
 
 function getCardsForMode(mode) {
+  let cards;
+
   if (mode === "all") {
-    return [...codingConcepts];
+    cards = [...codingConcepts];
+  } else if (mode === "mistakes") {
+    cards = codingConcepts.filter((card) => card.type === "find-mistake");
+  } else {
+    const today = startOfToday();
+    cards = codingConcepts.filter((card) => {
+      const cardProgress = progress[card.id];
+      return !cardProgress || new Date(cardProgress.nextReview) <= today;
+    });
   }
 
-  if (mode === "mistakes") {
-    return codingConcepts.filter((card) => card.type === "find-mistake");
+  if (activeLanguage === "all") {
+    return cards;
   }
 
-  const today = startOfToday();
-  return codingConcepts.filter((card) => {
-    const cardProgress = progress[card.id];
-    return !cardProgress || new Date(cardProgress.nextReview) <= today;
-  });
+  return cards.filter((card) => getCardLanguage(card) === activeLanguage);
 }
 
 function showCard() {
@@ -294,6 +311,18 @@ function formatType(type) {
     predict: "Predict",
   };
   return labels[type] || type;
+}
+
+function getCardLanguage(card) {
+  if (card.topic === "HTML") {
+    return "html";
+  }
+
+  if (card.topic === "CSS" || card.topic === "Design") {
+    return "css";
+  }
+
+  return "javascript";
 }
 
 function readStorage(key, fallback) {

@@ -10,6 +10,11 @@
 - `const`
 - `event.preventDefault()`
 - `localStorage`
+- `let`
+- `data-*` attributes
+- `dataset`
+- `Array.filter()`
+- conditional operator: `condition ? valueA : valueB`
 
 ## Reviewing
 
@@ -21,6 +26,8 @@
 - responsive layout
 - hero sections
 - visual hierarchy
+- HTML attributes: `attribute="value"`
+- filtering displayed data
 
 ## Solid
 
