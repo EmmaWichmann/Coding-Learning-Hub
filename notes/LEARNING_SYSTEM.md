@@ -75,6 +75,24 @@ Our rule:
 3. answer a short quiz
 4. revisit it later
 
+## Coding Hub Practice Modes
+
+- `Cloze cards`: retrieve one missing concept from memory.
+- `Multiple choice`: distinguish the right meaning from similar choices.
+- `Find the mistake`: identify and repair one small coding error.
+- `Predict`: explain what code will do before revealing the answer.
+- `Missed concepts`: keep a separate log of ideas that need another review.
+
+The review schedule is:
+
+- `1d`
+- `3d`
+- `7d`
+- `14d`
+- `30d`
+
+Choosing `Again` moves a concept back to `1d`. Stronger answers move it forward through the schedule.
+
 ## What To Avoid
 
 - copying large code blocks without testing them

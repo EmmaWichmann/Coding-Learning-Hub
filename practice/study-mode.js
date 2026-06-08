@@ -13,6 +13,7 @@ const answerPanel = document.getElementById("answer-panel");
 const answerNode = document.getElementById("card-answer");
 const explanationNode = document.getElementById("card-explanation");
 const ratingButtons = document.getElementById("rating-buttons");
+const ratingDateLabels = document.querySelectorAll("[data-rating-date]");
 const dueCountNode = document.getElementById("due-count");
 const reviewedCountNode = document.getElementById("reviewed-count");
 const streakNode = document.getElementById("streak-count");
@@ -134,6 +135,7 @@ function showCard() {
   ratingButtons.hidden = true;
   revealButton.hidden = false;
   revealButton.textContent = card.options ? "Show answer instead" : "Flip card";
+  updateRatingDateLabels(card);
   updateProgressDisplay();
 }
 
@@ -248,6 +250,23 @@ function updateStats() {
   streakNode.textContent = getStudyStreak();
 }
 
+function updateRatingDateLabels(card) {
+  const oldProgress = progress[card.id] || { intervalIndex: -1 };
+  const currentIndex = oldProgress.intervalIndex;
+  const intervalIndexes = {
+    again: 0,
+    hard: Math.max(0, currentIndex),
+    good: Math.min(currentIndex + 1, reviewIntervals.length - 1),
+    easy: Math.min(currentIndex + 2, reviewIntervals.length - 1),
+  };
+
+  ratingDateLabels.forEach((label) => {
+    const intervalIndex = intervalIndexes[label.dataset.ratingDate];
+    const days = reviewIntervals[intervalIndex];
+    label.textContent = formatReviewDate(days);
+  });
+}
+
 function updateProgressDisplay() {
   const total = currentCards.length;
   const completed = Math.min(currentIndex, total);
@@ -296,4 +315,13 @@ function addDays(days) {
   const date = startOfToday();
   date.setDate(date.getDate() + days);
   return date;
+}
+
+function formatReviewDate(days) {
+  const dateText = addDays(days).toLocaleDateString(undefined, {
+    month: "short",
+    day: "numeric",
+  });
+
+  return days === 1 ? `tomorrow, ${dateText}` : `${dateText} (${days} days)`;
 }

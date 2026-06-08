@@ -6,6 +6,10 @@
 - `addEventListener()`
 - `textContent`
 - `.value`
+- `document`
+- `const`
+- `event.preventDefault()`
+- `localStorage`
 
 ## Reviewing
 
@@ -13,6 +17,10 @@
 - `margin`
 - `padding`
 - `id`
+- `CSS Grid`
+- responsive layout
+- hero sections
+- visual hierarchy
 
 ## Solid
 

@@ -38,3 +38,23 @@
 
 - Overall coding time today: 5 hours 1 minute across 3 sessions
 - Overall coding time since practice logging began: 5 hours 1 minute
+
+## June 7, 2026 Session 1
+
+- Log time: 9:06 PM EDT
+- Focus: `Music Mood App`, JavaScript understanding, and the `Coding Learning Hub`
+- Completed independently:
+  - removed the duplicated Podcast, Movies, and Books section
+  - corrected the Music Mood App README so it matches the current app
+- Concepts discussed slowly:
+  - `document.getElementById()`
+  - `const`
+  - HTML `id` values and JavaScript nicknames or references
+  - `.value`
+- AI-assisted work:
+  - built the first interactive concept-card and spaced-repetition system
+  - added cloze, multiple-choice, prediction, and Find the Mistake activities
+  - added automatic missed-concept logging
+  - added real calendar dates to the review choices
+- Testing note: Python was used only to run a temporary local web server for browser testing. The Coding Hub itself still uses `HTML`, `CSS`, and `JavaScript`.
+- Learning plan: return to slow learning and add future features in tiny, explained steps.
