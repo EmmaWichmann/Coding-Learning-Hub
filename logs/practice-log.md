@@ -46,6 +46,9 @@
 - Completed independently:
   - removed the duplicated Podcast, Movies, and Books section
   - corrected the Music Mood App README so it matches the current app
+  - completed the Bug Finding practice activity
+  - completed Exam 2: CSS Layout Basics
+  - reviewed Exam 1: HTML Basics
 - Concepts discussed slowly:
   - `document.getElementById()`
   - `const`
@@ -58,3 +61,4 @@
   - added real calendar dates to the review choices
 - Testing note: Python was used only to run a temporary local web server for browser testing. The Coding Hub itself still uses `HTML`, `CSS`, and `JavaScript`.
 - Learning plan: return to slow learning and add future features in tiny, explained steps.
+- Current task at 9:12 PM EDT: find and understand the `form.reset();` line in `script.js`.
